@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html ng-app="WER">
+  <head>
+    <meta charset="utf-8">
+    <title>Wearable Devices Homepage</title>
+
+    <!-- Scripts -->
+    <script type="text/javascript" src="vendors/angular.min.js"></script>
+    <script type="text/javascript" src="scripts/clientapp.js"></script>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="vendors/bootstrap.min.css"></link>
+    <link rel="stylesheet" href="scripts/sheetrock.css"></link>
+  </head>
+  <body ng-controller="addPerson">
+    <div class="row">
+      <div class="container">
+        <div class="col-md-12">
+          <h1> Wearable Devices Homepage</h1>
+          <p>Welcome to the homepage.<p>
+            <ng-include
+            src="'partials/navbar.html'"
+            onload="string">
+          </ng-include>
+
+
+          <h3>Add a person</h3>
+          <p>Add a person by filling out the form below.</p>
+          <form>
+            <p>Name: <input type="text" placeholder="Name" ng-model="name"><br></p>
+            <p>Hierarchy:  <select   ng-model="hierarchy" name="hierarchy">
+              <option value="1">1 - High</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5 - Medium</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="8">9</option>
+              <option value="10">10 - Low</option>
+            </select><br></p>
+            <p>Temperature Preference (Degrees Fahrenheit): <input type="text" placeholder="Temperature" ng-model="temperature"></br></p>
+
+            <button ng-click="submit()">Submit</button>
+
+          </form>
+
+
+        </div>
+      </div>
+    </div>
+
+  </body>
+</html>

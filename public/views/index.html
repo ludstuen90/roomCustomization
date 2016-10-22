@@ -1,19 +1,35 @@
 <!DOCTYPE html>
-
 <html ng-app="WER">
-
-
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>Wearable Devices Homepage</title>
+
+    <!-- Scripts -->
     <script type="text/javascript" src="vendors/angular.min.js"></script>
     <script type="text/javascript" src="scripts/clientapp.js"></script>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="vendors/bootstrap.min.css"></link>
+    <link rel="stylesheet" href="scripts/sheetrock.css"></link>
   </head>
   <body ng-controller="homepage">
-    <h1> this is my awesome homepage!! yayo!!</h1>
+    <div class="row">
+      <div class="container">
+        <div class="col-md-12">
+          <h1> Wearable Devices Homepage</h1>
+          <p >Welcome to the homepage.<p>
+            <ng-include
+            src="'partials/navbar.html'"
+            onload="string">
+          </ng-include>
 
-    <p>THIS IS THE LOGIN BRANCH.<p>
+            <br><br><br>
+            <h4>Test bar</h4>
+            <button ng-click="test()">Test click</button>
 
+        </div>
+      </div>
+    </div>
 
   </body>
 </html>
