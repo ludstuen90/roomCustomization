@@ -17,4 +17,14 @@ router.get('/', function(req, res){
   res.sendFile(path.resolve('public/views/addPerson.html'));
 });
 
+router.post('/data', function(req, res){
+  console.log(req.body.name, req.body.temperature, req.body.hierarchy);
+  pg.connect(connectionString, function(err, client, done){
+    client.query("INSERT INTO preferences (name, preftemp, hierarchy) VALUES ($1, $2, $3)", [req.body.name, req.body.temperature, req.body.hierarchy]);
+    done();
+    pg.end();
+  });
+  res.sendStatus(200);
+});
+
 module.exports = router;

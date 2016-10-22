@@ -21,8 +21,18 @@ console.log("Add Person controller");
 
   $scope.submit = function() {
 console.log('click');
-console.log($scope.name, $scope.hierarchy, $scope.temperature);
-
+$scope.newPerson = {
+  "name": $scope.name,
+  "hierarchy": $scope.hierarchy,
+  "temperature": $scope.temperature
+};
+$http({
+  method: 'POST',
+  url: '/addPerson/data',
+  data: $scope.newPerson
+}).then(function(){
+  console.log('success');
+});
 
   };
 }]);
