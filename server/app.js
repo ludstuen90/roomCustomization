@@ -12,11 +12,13 @@ app.use(bodyParser.urlencoded({extended:false}));
 var home = require('./routes/home');
 var databaseConnect = require('./routes/database');
 var addPerson = require('./routes/addPerson');
+var requests = require('./routes/requests');
 
 // Routes
 app.use('/', home);
 app.use('/test', databaseConnect);
 app.use('/addPerson', addPerson);
+app.use('/requests', requests);
 
 //Establish static public folder
 app.use(express.static('public'));
