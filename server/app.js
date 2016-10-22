@@ -13,12 +13,14 @@ var home = require('./routes/home');
 var databaseConnect = require('./routes/database');
 var addPerson = require('./routes/addPerson');
 var requests = require('./routes/requests');
+var calculations = require('./routes/calculations');
 
 // Routes
 app.use('/', home);
 app.use('/test', databaseConnect);
 app.use('/addPerson', addPerson);
 app.use('/requests', requests);
+app.use('/calculations', calculations);
 
 //Establish static public folder
 app.use(express.static('public'));

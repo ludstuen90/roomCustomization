@@ -5,10 +5,16 @@ var pg = require('pg');
 var router = express.Router();
 
 
-router.all('/', function(req,res){
-  console.log('hit received');
-  console.log(req);
+router.post('/data', function(req,res){
   console.log(req.body);
+  console.log('new hit received');
+  console.log('the strength is ', req.body.strength);
+  console.log('the id is ', req.body.id);
+  if (req.body.id == 'new message') {
+    console.log('puppies');
+  } else {
+    console.log('no puppies');
+  }
   res.sendStatus(200);
 });
 
