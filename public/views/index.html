@@ -14,16 +14,19 @@
   </head>
   <body ng-controller="homepage">
     <div class="row">
-      <div class="container">
-        <div class="col-md-12">
-          <h1> Wearable Devices Homepage</h1>
-          <p >Welcome to the homepage.<p>
-            <ng-include
-            src="'partials/navbar.html'"
-            onload="string">
-          </ng-include>
 
-            <br><br><br>
+      <div class="container">
+        <ng-include
+        src="'partials/navbar.html'"
+        onload="string">
+      </ng-include>
+                    
+        <div class="col-md-12">
+
+
+            <br>
+
+
             <h4>Test bar</h4>
             <button ng-click="test()">Test click</button>
 
