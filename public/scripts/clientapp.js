@@ -10,35 +10,30 @@ $scope.variable= 0;
 
 $scope.updatePage = function(){
 
-  if ($scope.variable==0) {
-    console.log('zero');
-    $scope.variable = 1;
-    $scope.name = "Gina";
-    $scope.curtainStatus = "closed";
-    console.log($scope.name, $scope.curtainStatus);
-$scope.$apply();
-
-  }else  {
-    console.log('one');
-    $scope.variable = 0;
-    $scope.name = "George";
-    $scope.curtainStatus = "open";
-    console.log($scope.name, $scope.curtainStatus);
-$scope.$apply();
 
 
 
-  }
+
+
   console.log('update page');
-  setTimeout($scope.updatePage, 3000);
+  setTimeout($scope.updatePage, 1000);
 
-  // $http({
-  //   method: 'GET',
-  //   url: '/requests/status'
-  // });
+  $http({
+    method: 'GET',
+    url: '/requests/status'
+  }).then(function(response){
+    console.log(response.data);
+    $scope.name = response.data.name;
+    if (response.data.strength == 80) {
+      $scope.curtainStatus = 'closed';
+    } else if (response.data.strength == 90) {
+      $scope.curtainStatus = 'open';
+    }
+
+  });
 
 };
-setTimeout($scope.updatePage, 300);
+setTimeout($scope.updatePage, 1000);
 
 
   $scope.test = function(){

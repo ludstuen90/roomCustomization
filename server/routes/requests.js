@@ -9,7 +9,7 @@ router.get('/status', function(req, res){
     "name": name,
     "strength": strength
   };
-  res.send(object);
+  res.json(object);
 });
 
 
