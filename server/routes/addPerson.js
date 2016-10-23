@@ -12,7 +12,7 @@ if(process.env.DATABASE_URL !== undefined) {
 } else {
     // running locally, use our local database instead
     connectionString = 'postgres://localhost:5432/wearable';
-}2
+}
 
 router.get('/', function(req, res){
   res.sendFile(path.resolve('public/views/addPerson.html'));

@@ -3,6 +3,10 @@ var WER=angular.module('WER', []);
 
 WER.controller('homepage', ['$scope','$http', function($scope,$http){
 console.log("Homepage Controller");
+$scope.curtainStatus = "open";
+$scope.name = "George";
+
+
   $scope.test = function(){
     console.log('we made it here');
 
