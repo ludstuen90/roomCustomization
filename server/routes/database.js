@@ -14,6 +14,7 @@ if(process.env.DATABASE_URL !== undefined) {
 }
 
 
+
 router.get('/', function(req, res){
   console.log('request at test received');
   result = [];
@@ -26,6 +27,7 @@ router.get('/', function(req, res){
     query.on('end', function() {
       done();
       pg.end();
+      // global.information = result;
       return res.json(result);
     });
     if (err){
